@@ -4,7 +4,7 @@ Goal: Create a simple RSA asymmetric encryption using python
 
 # RSA Encryption 
 
-This project demonstrates the generation, saving, loading, and use of RSA keys to encrypt a message using Python. The `rsa` library is used to handle the RSA encryption and decryption process.
+This project demonstrates the use of RSA keys to encrypt a message using Python. The `rsa` library is used to handle the RSA encryption and decryption process.
 
 ## Prerequisites
 
