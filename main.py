@@ -1,21 +1,16 @@
-# This is a sample Python script.
-
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
-
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
-if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
 import rsa
 
 public_key, private_key = rsa.newkeys(1024)
 
-print(private_key)
+with open("public.pem", "rb") as f:
+   public_key = rsa.PublicKey.load_pkcs1(f.read())
+    
+with open("private.pem", "rb") as f:
+    private_key = rsa.PrivateKey.load_pkcs1(f.read())
+    
+message = "My phone number is 9174456678"
+
+encrypted_message = rsa.encrypt(message.encode(), public_key)
+
+with open("encrypted.message", "wb") as f:
+    f.write(encrypted_message)
