@@ -13,10 +13,10 @@ This project demonstrates the use of RSA keys to encrypt a message using Python.
 
 You can install the `rsa` library using pip:
 
-```bash
+```bash / '''bash
 pip install rsa.
 
-'''bash
+
 
 
 
