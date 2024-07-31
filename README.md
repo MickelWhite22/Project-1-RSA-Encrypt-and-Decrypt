@@ -71,5 +71,16 @@ Step 3: Encrypting a message
  
   message = "My phone number is 9174456678"
 
-   
-  
+   encrypted_message = rsa.encrypt(message.encode(), public_key)
+
+  ```
+
+Step 4: Save newly encrypted message
+
+- Create a file to save the encrypted message. In this case, i used 'encrypted.message'.
+
+  ```bash
+
+  with open("encrypted.message", "wb") as f:
+    f.write(encrypted_message)
+   ```
