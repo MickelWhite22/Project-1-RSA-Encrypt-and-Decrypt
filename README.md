@@ -46,7 +46,7 @@ Step 1: Generate and Save RSA Keys
     f.write(private_key.save_pkcs1("PEM")) ```
     
 
-Step 2: Loading Keys
+Step 2: Loading keys
 
 - After creating the files and generating the keys you need to access the codes by reading the files contents
 
@@ -87,4 +87,32 @@ Step 4: Save newly encrypted message
 # RSA Decryption
 Now we are going to use the generated private key to decrypt the public key encrypted phrase chosen earlier.
 
-## 
+## Explanation
+
+Step 1: Reading the encrypted message 
+
+- Before decrypting the message, you need to open the 'encrypted.message' file in read-binary mode. You can do this by storing it under the 'encrypted_message' variable to prevent excessive lines of code. Remember that this file contains your phrase in encrypted form using the public key.
+
+   ```bash
+  encrypted_message = open("encrypted.message", "rb").read()
+   ```
+- Create a new variable called 'clear_message' and use the 'rsa.decrypt()' function to decrypt the 'encrypted message' using the 'private_key'.
+
+ ```bash
+  clear_message = rsa.decrypt(encrypted_message, private_key)
+  ```
+- If you print 'clear_message' without decoding it, you will get the message returned in bytes. Use the '.decode()' function to convert it to a string.
+
+ ```bash
+  print(clear_message.decode())
+  ```
+
+## Summary
+
+- Key loading: The code searches for previously saved RSA asymmetric encryption keys from files.
+
+- Reading Encrypted Data: The code reads an encrypted message from the public key files.
+
+- Decrypting Data: The encrypted message is decrypted using the private key.
+
+- Results: The decrypted message is converted from bytes to a string and displayed in the console.
