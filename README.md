@@ -58,15 +58,18 @@ Step 2: Loading Keys
     private_key = rsa.PrivateKey.load_pkcs1(f.read())
    ```
 
-  Step 3: Encrypting a message
+Step 3: Encrypting a message
 
-  - Decide on a phrase you'd like to encrypt
+- Decide on a phrase you'd like to encrypt and put it under the variable message
 
-  - Your chosen phrase is encoded into bytes using 'message.encode()'
+- Your chosen phrase is encoded into bytes using 'message.encode()'
  
-  - Your chosen phrase is encrypted by the generated public key with 'rsa.encrypt()'
+- Your chosen phrase is encrypted by the generated public key with 'rsa.encrypt()'
+
+
+   ```bash
  
-    
+  message = "My phone number is 9174456678"
 
    
   
