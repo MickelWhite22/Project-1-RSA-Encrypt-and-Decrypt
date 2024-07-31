@@ -34,23 +34,23 @@ Step 1: Generate and Save RSA Keys
 
 - Here I defined my standards by using Public Key Format One and Privacy-Enhanced Mail.
 
-  ```bash
-  import rsa
+```bash
+import rsa
 
-  public_key, private_key = rsa.newkeys(1024)
+public_key, private_key = rsa.newkeys(1024)
 
-  with open("public.pem", "wb") as f:
-    f.write(public_key.save_pkcs1("PEM"))
+with open("public.pem", "wb") as f:
+f.write(public_key.save_pkcs1("PEM"))
     
-  with open("private.pem", "wb") as f:
-    f.write(private_key.save_pkcs1("PEM")) ```
+with open("private.pem", "wb") as f:
+f.write(private_key.save_pkcs1("PEM"))
+```
     
-
 Step 2: Loading keys
 
 - After creating the files and generating the keys you need to access the codes by reading the files contents
 
-   ```bash
+ ```bash
   with open("public.pem", "rb") as f:
    public_key = rsa.PublicKey.load_pkcs1(f.read())
     
@@ -67,23 +67,23 @@ Step 3: Encrypting a message
 - Your chosen phrase is encrypted by the generated public key with 'rsa.encrypt()'
 
 
-   ```bash
+ ```bash
  
-  message = "My phone number is 9174456678"
+message = "My phone number is 9174456678"
 
-   encrypted_message = rsa.encrypt(message.encode(), public_key)
+  encrypted_message = rsa.encrypt(message.encode(), public_key)
 
-  ```
+```
 
 Step 4: Save newly encrypted message
 
 - Create a file to save the encrypted message. In this case, i used 'encrypted.message'.
 
-  ```bash
+```bash
 
-  with open("encrypted.message", "wb") as f:
-    f.write(encrypted_message)
-   ```
+with open("encrypted.message", "wb") as f:
+f.write(encrypted_message)
+ ```
 # RSA Decryption
 Now we are going to use the generated private key to decrypt the public key encrypted phrase chosen earlier.
 
@@ -93,9 +93,9 @@ Step 1: Reading the encrypted message
 
 - Before decrypting the message, you need to open the 'encrypted.message' file in read-binary mode. You can do this by storing it under the 'encrypted_message' variable to prevent excessive lines of code. Remember that this file contains your phrase in encrypted form using the public key.
 
-   ```bash
-  encrypted_message = open("encrypted.message", "rb").read()
-   ```
+```bash
+ encrypted_message = open("encrypted.message", "rb").read()
+  ```
 - Create a new variable called 'clear_message' and use the 'rsa.decrypt()' function to decrypt the 'encrypted message' using the 'private_key'.
 
  ```bash
