@@ -84,3 +84,7 @@ Step 4: Save newly encrypted message
   with open("encrypted.message", "wb") as f:
     f.write(encrypted_message)
    ```
+# RSA Decryption
+Now we are going to use the generated private key to decrypt the public key encrypted phrase chosen earlier.
+
+## 
