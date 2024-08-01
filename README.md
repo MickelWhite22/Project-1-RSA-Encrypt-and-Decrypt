@@ -28,7 +28,7 @@ Step 1: Generate and Save RSA Keys
 
 - Import the RA library
 
-- Using the 'rsa.newkeys(1024)' function I can generate the keys according to the desired bit length
+- Using the 'rsa.newkeys(2048)' function I can generate the keys according to the desired bit length
 
 - Create and name the files you will use to store the keys. In this case I simply named them 'public.pem' and 'private .pem'
 
@@ -37,7 +37,7 @@ Step 1: Generate and Save RSA Keys
 ```bash
 import rsa
 
-public_key, private_key = rsa.newkeys(1024)
+public_key, private_key = rsa.newkeys(2048)
 
 with open("public.pem", "wb") as f:
 f.write(public_key.save_pkcs1("PEM"))
