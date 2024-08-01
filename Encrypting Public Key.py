@@ -2,7 +2,7 @@
 import rsa
 
 # Specifying the length of the generated keys in bits.
-public_key, private_key = rsa.newkeys(1024)
+public_key, private_key = rsa.newkeys(2048)
 
 #Create separate files where the generated keys will be held.
 # with open("public.pem", "wb") as f:
